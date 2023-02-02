@@ -1,14 +1,14 @@
 package com.in28minutes.learnspringframework;
-import com.in28minutes.learnspringframework.game.MarioGame;
+
 import com.in28minutes.learnspringframework.game.GameRunner;
-import com.in28minutes.learnspringframework.game.SuperContraGame;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
+//@ComponentScan("com.in28minutes.learnspringframework")// 이것이 컴포넌트 스캔을 위한 디폴트 패키지기 때문에 이것을 구체적으로 쓸 필요가
+//없습니다.
 public class LearnSpringFrameworkApplication {
-
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context =//어플리케이션 컨텍스를 생성한 것이다 이것은 설명하면 복잡하지만 Spring 애플리케이션의 컨텍스트를 만들고 관리하는 데 일반적으로 사용된다
 				SpringApplication.run(LearnSpringFrameworkApplication.class,args);
@@ -20,7 +20,6 @@ public class LearnSpringFrameworkApplication {
 
 		//MarioGame game = new MarioGame();
 		//SuperContraGame game = new SuperContraGame();
-
 		//GameRunner runner = new GameRunner(game);
 		runner.runGame();
 	}

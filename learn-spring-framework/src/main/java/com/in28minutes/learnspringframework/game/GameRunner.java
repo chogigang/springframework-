@@ -7,12 +7,28 @@ import org.springframework.stereotype.Component;
 //나 대신 인스턴스를 생성하라 명령
 public class GameRunner {
 
-    @Autowired//마리오 게임이 컴포넌트라고 했어 그러니까 가서 찾아 그리고 객체 목록에서 찾으면 오토 와이어해 라고 하는것
-
+   // @Autowired//마리오 게임이 컴포넌트라고 했어 그러니까 가서 찾아 그리고 객체 목록에서 찾으면 오토 와이어해 라고 하는것
+        @Autowired    //필드 기반 의존성 주입 (Field)  Setter를 생성할 필요도 없고 생성자를 생성할 필요도 없습니다 그냥 필드에서 바로  autowired를 정의하고,저장
     private GamingConsole game;
+    //생성자 기반 의존성 주입(Constructor-based)
+
     public GameRunner(GamingConsole game) {
+        System.out.println("Using Constructor");
+
         this.game=game;
     }
+    //세터 기반 의존성 주입(Setter-based)
+
+  /* @Autowired
+        public void setGame(GamingConsole game){
+            System.out.println("Using Setter");
+                this.game = game;
+        }
+*/
+
+
+
+
         public void runGame() {
             game.up();
             game.down();
